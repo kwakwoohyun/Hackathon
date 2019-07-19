@@ -20,6 +20,6 @@ import theme.views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('theme.urls')),
-    path('/gallerydetail/', theme.views.gallerydetail, name='gallerydetail'),
-    path('/lottery/', theme.views.lottery, name='lottery'),
+    path('gallerydetail/', theme.views.gallerydetail, name='gallerydetail'),
+    path('lottery/', theme.views.lottery, name='lottery'),
 ]
