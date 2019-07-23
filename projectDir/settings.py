@@ -139,7 +139,7 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 
-SITE_ID = 1
+SITE_ID = 2
 
 STATIC_URL = '/static/'
 
