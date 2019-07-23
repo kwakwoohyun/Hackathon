@@ -1,6 +1,6 @@
   {% extends 'layout.html' %}
   {% load staticfiles %}
-
+  {% load socialaccount %}
 
   {% block header %}
   <header id="header" class="header-scrolled">
@@ -41,7 +41,13 @@
       <p class="mb-4 pb-0">간편한 가입과 응모를 통해 행운의 결과를 열어보세요</p>
       <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="venobox play-btn mb-4" data-vbtype="video"
         data-autoplay="true"></a>
-      <a href="#login" class="login-btn scrollto">로그인 하러가기</a>
+        <h1>소셜 로그인을 해봐요!</h1> <a href = "/accounts/signup">회원가입</a><br> 
+        {% if user.is_authenticated %}
+          <a href = "/accounts/logout">로그아웃</a> {{user.username}} 님이 로그인중 
+          {% else %}
+          <a href="{% provider_login_url 'kakao' %}" class="login-btn scrollto">로그인 하러가기</a>
+            <br> 로그인 하셔야 합니다.
+            {% endif %}
     </div>
   </section>
 
