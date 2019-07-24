@@ -147,6 +147,7 @@ ACCOUNT_AUTHENTICATED_LOGIN_REDIRECTS = True
 LOGIN_REDIRECT_URL = "/"
 ACCOUNT_AUTHENTICATED_LOGOUT_REDIRECTS = True
 ACCOUNT_LOGOUT_REDIRECT_URL = "/"
+ACCOUNT_ADAPTER = 'MyAdapter'
 
 import dj_database_url
 db_from_env = dj_database_url.config(conn_max_age=500)
