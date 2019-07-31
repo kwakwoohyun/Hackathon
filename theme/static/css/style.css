@@ -8,11 +8,11 @@
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
-
+@font-face { font-family: 'S-CoreDream-3Light'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff'); font-weight: normal; font-style: normal; }
 body {
   background: #fff;
   color: #2f3138;
-  font-family: "Open Sans", sans-serif;
+  font-family: "S-CoreDream-3Light", sans-serif;
 }
 
 a {
@@ -30,7 +30,7 @@ a:focus {
 
 p {
   padding: 0;
-  margin: 0 0 30px 0;
+  margin: 0 0 20px 0;
 }
 
 h1,
@@ -39,7 +39,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Raleway", sans-serif;
+  font-family: "S-CoreDream-3Light", sans-serif;
   font-weight: 400;
   margin: 0 0 20px 0;
   padding: 0;
@@ -103,7 +103,7 @@ h6 {
 --------------------------------*/
 
 .section-header {
-  margin-bottom: 60px;
+  margin-bottom: 35px;
   position: relative;
   padding-bottom: 20px;
 }
@@ -145,8 +145,8 @@ h6 {
 --------------------------------------------------------------*/
 
 #header {
-  height: 90px;
-  padding: 25px 0;
+  height: 85px;
+  padding: 15px 0;
   position: fixed;
   left: 0;
   top: 0;
@@ -159,7 +159,7 @@ h6 {
 #header.header-scrolled,
 #header.header-fixed {
   background: rgba(6, 12, 34, 0.98);
-  height: 78px;
+  height: 75px;
   padding: 15px 0;
   transition: all 0.5s;
 }
@@ -169,7 +169,7 @@ h6 {
   margin: 0;
   padding: 6px 0;
   line-height: 1;
-  font-family: "Raleway", sans-serif;
+  font-family: "S-CoreDream-3Light", sans-serif;
   font-weight: 700;
   letter-spacing: 3px;
   text-transform: uppercase;
@@ -187,6 +187,7 @@ h6 {
 #header #logo img {
   padding: 0;
   margin: 0;
+  height: 65px;
 }
 
 /*--------------------------------------------------------------
@@ -243,7 +244,7 @@ h6 {
   content: "\f107";
   position: absolute;
   right: 15px;
-  font-family: FontAwesome;
+  font-family: S-CoreDream-3Light;
   font-style: normal;
   font-weight: normal;
 }
@@ -255,7 +256,7 @@ h6 {
 /* Nav Meu Container */
 
 #nav-menu-container {
-  float: right;
+  float: center;
   margin: 0;
 }
 
@@ -266,9 +267,20 @@ h6 {
   text-decoration: none;
   display: inline-block;
   color: rgba(202, 206, 221, 0.8);
-  font-family: "Raleway", sans-serif;
+  font-family: "S-CoreDream-3Light", sans-serif;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 15px;
+  outline: none;
+}
+
+.nav-menu p {
+  padding: 4px;
+  text-decoration: none;
+  display: inline-block;
+  color: black;
+  font-family: "S-CoreDream-3Light", sans-serif;
+  font-weight: 600;
+  font-size: 15px;
   outline: none;
 }
 
@@ -311,7 +323,7 @@ h6 {
   margin-left: 8px;
   margin-top: 2px;
   line-height: 1;
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .nav-menu li.contact a:hover {
@@ -510,7 +522,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 #intro h1 {
   color: #fff;
-  font-family: "Raleway", sans-serif;
+  font-family: "S-CoreDream-3Light", sans-serif;
   font-size: 56px;
   font-weight: 600;
   text-transform: uppercase;
@@ -601,7 +613,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #intro .login-btn {
-  font-family: "Raleway", sans-serif;
+  font-family: "S-CoreDream-3Light", sans-serif;
   font-weight: 500;
   font-size: 14px;
   letter-spacing: 1px;
@@ -1007,13 +1019,13 @@ body.mobile-nav-active #mobile-nav-toggle {
   color: #ffc31d;
 }
 
-#hotels p {
+/* #hotels p {
   padding: 0 20px;
   margin-bottom: 20px;
   color: #060c22;
   font-style: italic;
   font-size: 15px;
-}
+} */
 
 /*--------------------------------------------------------------
 # Gallery Section
@@ -1123,7 +1135,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   padding: 18px 0;
   display: block;
   position: relative;
-  font-family: "Raleway", sans-serif;
+  font-family: "S-CoreDream-3Light", sans-serif;
   font-size: 16px;
   line-height: 24px;
   font-weight: 600;
@@ -1412,7 +1424,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   margin: 0 0 20px 0;
   padding: 2px 0 2px 0;
   line-height: 1;
-  font-family: "Raleway", sans-serif;
+  font-family: "S-CoreDream-3Light", sans-serif;
   font-weight: 700;
   color: #fff;
 }
@@ -1426,7 +1438,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   font-size: 14px;
   line-height: 24px;
   margin-bottom: 0;
-  font-family: "Raleway", sans-serif;
+  font-family: "S-CoreDream-3Light", sans-serif;
   color: #fff;
 }
 
