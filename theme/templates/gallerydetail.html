@@ -1,6 +1,5 @@
   {% extends 'layout.html' %}
   {% load staticfiles %}
-
   {% block content %}
     <!--==========================
       Gallery Detail Section
@@ -8,15 +7,13 @@
     <section id="venue" class="wow fadeInUp">
       <div class="container">
         <div class="section-header">
-          <br><br><br>
-          <h2>공연 상세 페이지</h2>
-          <p>Praesentium ut qui possimus sapiente nulla.</p>
+          <h2>공연 소개</h2>
+          <p>라이온 킹</p>
         </div>
         <div class="row no-gutters">
           <div class="col-lg-6 venue-map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12097.433213460943!2d-74.0062269!3d40.7101282!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb89d1fe6bc499443!2sDowntown+Conference+Center!5e0!3m2!1smk!2sbg!4v1539943755621" frameborder="0" style="border:0" allowfullscreen></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12664.857319457693!2d127.0139129!3d37.4792683!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x73c1d37009f29b29!2z7JiI7Iig7J2Y7KCE64u5IOyYpO2OmOudvO2VmOyasOyKpA!5e0!3m2!1sko!2skr!4v1565160951962!5m2!1sko!2skr" frameborder="0" style="border:0" allowfullscreen></iframe>
           </div>
-  
           <div class="col-lg-6 venue-info">
             <div class="row justify-content-center">
               <div class="col-11 col-lg-8">
@@ -29,7 +26,7 @@
 
         <div class="row">
           <div class="col-md-6">
-            <img src="{% static 'img/speakers/1.jpg' %}" alt="Speaker 1" class="img-fluid">
+            <img src="https://soptserver.s3.ap-northeast-2.amazonaws.com/1565161094788.gif" style="width:50%" alt="Speaker 1" class="img-fluid">
           </div>
 
           <div class="col-md-6">
@@ -46,6 +43,138 @@
         </div>
       </div>
 
+    </section>
+
+    <section id="schedule" class="section-with-bg">
+        <div class="container wow fadeInUp">
+            <div class="section-header">
+                <h2>공연 일정</h2>
+            </div>
+      
+            <ul class="nav nav-tabs" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" href="#day-1" role="tab" data-toggle="tab">Day 1</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#day-2" role="tab" data-toggle="tab">Day 2</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#day-3" role="tab" data-toggle="tab">Day 3</a>
+                </li>
+            </ul>
+      
+            <h3 class="sub-heading">Voluptatem nulla veniam soluta et corrupti consequatur neque eveniet officia. Eius
+                necessitatibus voluptatem quis labore perspiciatis quia.</h3>
+      
+            <div class="tab-content row justify-content-center">
+      
+                <!-- Schdule Day 1 -->
+                <div role="tabpanel" class="col-lg-9 tab-pane fade show active" id="day-1">
+      
+                    <div class="row schedule-item">
+                        <div class="col-md-2"><time>09:30 AM</time></div>
+                        <div class="col-md-10">
+                            <h4>Registration</h4>
+                            <p>Fugit voluptas iusto maiores temporibus autem numquam magnam.</p>
+                        </div>
+                    </div>
+      
+                    <div class="row schedule-item">
+                        <div class="col-md-2"><time>10:00 AM</time></div>
+                        <div class="col-md-10">
+                            <div class="speaker">
+                                <img src="{% static 'img/speakers/1.jpg' %}" alt="Brenden Legros">
+                            </div>
+                            <h4>Keynote <span>Brenden Legros</span></h4>
+                            <p>Facere provident incidunt quos voluptas.</p>
+                        </div>
+                    </div>
+      
+                    <div class="row schedule-item">
+                        <div class="col-md-2"><time>11:00 AM</time></div>
+                        <div class="col-md-10">
+                            <div class="speaker">
+                                <img src="{% static 'img/speakers/2.jpg' %}" alt="Hubert Hirthe">
+                            </div>
+                            <h4>Et voluptatem iusto dicta nobis. <span>Hubert Hirthe</span></h4>
+                            <p>Maiores dignissimos neque qui cum accusantium ut sit sint inventore.</p>
+                        </div>
+                    </div>
+      
+                </div>
+                <!-- End Schdule Day 1 -->
+      
+                <!-- Schdule Day 2 -->
+                <div role="tabpanel" class="col-lg-9  tab-pane fade" id="day-2">
+      
+                    <div class="row schedule-item">
+                        <div class="col-md-2"><time>10:00 AM</time></div>
+                        <div class="col-md-10">
+                            <div class="speaker">
+                                <img src="{% static 'img/speakers/1.jpg' %}" alt="Brenden Legros">
+                            </div>
+                            <h4>Libero corrupti explicabo itaque. <span>Brenden Legros</span></h4>
+                            <p>Facere provident incidunt quos voluptas.</p>
+                        </div>
+                    </div>
+      
+                    <div class="row schedule-item">
+                        <div class="col-md-2"><time>11:00 AM</time></div>
+                        <div class="col-md-10">
+                            <div class="speaker">
+                                <img src="{% static 'img/speakers/2.jpg' %}" alt="Hubert Hirthe">
+                            </div>
+                            <h4>Et voluptatem iusto dicta nobis. <span>Hubert Hirthe</span></h4>
+                            <p>Maiores dignissimos neque qui cum accusantium ut sit sint inventore.</p>
+                        </div>
+                    </div>
+      
+                </div>
+                <!-- End Schdule Day 2 -->
+      
+                <!-- Schdule Day 3 -->
+                <div role="tabpanel" class="col-lg-9  tab-pane fade" id="day-3">
+      
+                    <div class="row schedule-item">
+                        <div class="col-md-2"><time>10:00 AM</time></div>
+                        <div class="col-md-10">
+                            <div class="speaker">
+                                <img src="{% static 'img/speakers/2.jpg' %}" alt="Hubert Hirthe">
+                            </div>
+                            <h4>Et voluptatem iusto dicta nobis. <span>Hubert Hirthe</span></h4>
+                            <p>Maiores dignissimos neque qui cum accusantium ut sit sint inventore.</p>
+                        </div>
+                  </div>
+      
+                    <div class="row schedule-item">
+                        <div class="col-md-2"><time>11:00 AM</time></div>
+                        <div class="col-md-10">
+                            <div class="speaker">
+                                <img src="{% static 'img/speakers/3.jpg' %}" alt="Cole Emmerich">
+                            </div>
+                            <h4>Explicabo et rerum quis et ut ea. <span>Cole Emmerich</span></h4>
+                            <p>Veniam accusantium laborum nihil eos eaque accusantium aspernatur.</p>
+                        </div>
+                    </div>
+      
+                    <div class="row schedule-item">
+                        <div class="col-md-2"><time>12:00 AM</time></div>
+                        <div class="col-md-10">
+                            <div class="speaker">
+                                <img src="{% static 'img/speakers/1.jpg' %}" alt="Brenden Legros">
+                            </div>
+                            <h4>Libero corrupti explicabo itaque. <span>Brenden Legros</span></h4>
+                            <p>Facere provident incidunt quos voluptas.</p>
+                        </div>
+                    </div>
+      
+                </div>
+                <!-- End Schdule Day 3 -->
+      
+            </div>
+      
+        </div>
+      
     </section>
 
   {% endblock %}

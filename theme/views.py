@@ -7,6 +7,6 @@ class MainpageView(TemplateView):
     
 def gallerydetail(request):
     return render(request, 'gallerydetail.html')
-z
+
 def lottery(request):
     return render(request, 'lottery.html')
