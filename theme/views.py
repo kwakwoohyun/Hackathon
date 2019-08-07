@@ -6,8 +6,7 @@ class MainpageView(TemplateView):
     template_name = 'index.html'
     
 def gallerydetail(request):
-    print(request.GET.get('code',''))
     return render(request, 'gallerydetail.html')
-
+z
 def lottery(request):
     return render(request, 'lottery.html')
