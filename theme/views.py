@@ -3,14 +3,15 @@ from django.views.generic. base import TemplateView
 from django.core.mail import send_mail
 from django.conf import settings
 from django.template.loader import render_to_string
+from show.models import Show
 
 # Create your views here.
 
 class MainpageView(TemplateView):
+    show = Show.objects
+    print(show)
+    print("lalala")
     template_name = 'index.html'
-
-def gallerydetail(request):
-    return render(request, 'gallerydetail.html')
 
 
 def lottery(request):

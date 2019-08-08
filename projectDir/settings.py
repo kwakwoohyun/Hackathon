@@ -144,7 +144,7 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
 
-SITE_ID = 4
+SITE_ID = 5
 
 STATIC_URL = '/static/'
 
