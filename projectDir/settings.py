@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'show',
     'user',
     'theme',
+    'qrcode',
 
     #allauth
     'allauth',
@@ -123,7 +124,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ko-kr'
+
+TIME_ZONE = 'Asia/Seoul' 
 
 TIME_ZONE = 'UTC'
 
@@ -150,6 +153,14 @@ LOGIN_REDIRECT_URL = "/"
 ACCOUNT_AUTHENTICATED_LOGOUT_REDIRECTS = True
 ACCOUNT_LOGOUT_ON_GET = True
 ACCOUNT_LOGOUT_REDIRECT_URL = "/"
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_HOST_USER = 'starpin1014@likelion.org'
+EMAIL_HOST_PASSWORD = '67982269'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 import dj_database_url
 db_from_env = dj_database_url.config(conn_max_age=500)
