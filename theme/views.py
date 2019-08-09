@@ -1,11 +1,9 @@
 from django.shortcuts import render
 from django.views.generic. base import TemplateView
-from django.core.mail import send_mail
-from django.conf import settings
-from django.template.loader import render_to_string
 from show.models import Show
 
 # Create your views here.
+<<<<<<< HEAD
 def MainpageView(request):
     show = Show.objects.all()
     return render(request,'index.html',{'show':show})
@@ -21,3 +19,9 @@ msg_html = render_to_string('email.html')
     html_message=msg_html,
     fail_silently=False
 ) '''
+=======
+
+def MainpageView(request):
+    show = Show.objects.all()
+    return render(request,'index.html',{'show':show})
+>>>>>>> 1230a10ab1f50034f70a0d86a306252d552edd35

@@ -34,9 +34,55 @@
 
 <body>
 
+<header id="header" class="header-scrolled">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div id="logo" class="pull-left">
+          <a href="/#intro" class="scrollto"><img src="{% static 'img/logo.png' %}" width="300px" title=""></a>
+        </div>
+      </div>
 
-  {% block header %}
-  {% endblock %}
+      <div class="col-4" style="margin-left: 5%">
+        <!-- <nav id="nav-menu-container"> -->
+          <ul class="nav-menu">
+            <li class="menu-active"><a href="/#intro">메인</a></li>
+            <!-- <li><a href="#login">login</a></li> -->
+            <li><a href="/#about">소개</a></li>
+            <li><a href="/#gallery">공연</a></li>
+            <!-- <li><a href="#venue">Venue</a></li> -->
+            <li><a href="/#hotels">포춘티켓</a></li>
+            <!-- <li><a href="#schedule">Schedule</a></li> -->
+            <li><a href="/#supporters">후원</a></li>
+            <!-- <li class="contact"><a href="/#contact">행운확인</a></li> -->
+            <!-- <li class="buy-tickets"><a href="#buy-tickets">Buy Tickets</a></li> -->
+          </ul>
+        <!-- </nav> -->
+      </div>
+
+      <div class="col">
+        <!-- <nav id="nav-menu-container"> -->
+          <ul class="nav-menu">
+            <li class="nav-item dropdown" style="margin-left: 10%">
+              {% if user.is_authenticated %}
+                <img src="{{ user.socialaccount_set.all.0.get_avatar_url }}" class="rounded-circle" width="40px" height="40px" />
+                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{user.username}} 님이 로그인 중</a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#"><p>내정보</p></a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/#contact"><p>행운확인</p></a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/accounts/logout"><p>로그아웃</p></a>
+                  </div>
+                {% else %}
+                <li class="contact" style="margin-left: 20%"><a href="{% provider_login_url 'kakao' %}" class="login-btn scrollto">로그인 하러가기</a></li>
+                {% endif %}
+            </li>
+          </ul>
+      </div>
+    </div>
+  </div>
+</header>
 
   {% block content %}
   {% endblock %}
@@ -51,10 +97,12 @@
           <div class="col-lg-3 col-md-6 footer-contact">
             <h4></h4>
             <div class="copyright">
-              &copy; Copyright <strong>TheEvent</strong>
+              &copy; Copyright <strong>FortuneTicket</strong>
             </div>
             <div class="credits">
-              Designed by <a href="https://www.instagram.com/seon._.h_a/">Leeseonha</a>
+              Developed by <a href="https://www.instagram.com/seon._.h_a/">이선하</a>,
+               <a href="https://www.instagram.com/minjony__/">심민정</a>,
+               <a href="https://www.instagram.com/kkkkkwak_/">곽우현</a>
               <br><br>
             </div>
 

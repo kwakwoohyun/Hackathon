@@ -12,4 +12,6 @@ urlpatterns = [
     path('<int:show_id>/gallerydetail/', show.views.gallerydetail, name='gallerydetail'),
     path('lottery/',  fortune.views.lottery, name='lottery'),
     path('enroll/',  fortune.views.enroll, name='enroll'),
+    path('send/',  fortune.views.sendEmail, name='send'),
+
 ]

@@ -3,65 +3,6 @@
 {% load socialaccount %}
 {% load qr_tags %}
 
-{% block header %}
-<header id="header" class="header-scrolled">
-  <div class="container">
-    <div class="row">
-      <div class="col">
-        <div id="logo" class="pull-left">
-          <a href="/#intro" class="scrollto"><img src="{% static 'img/logo.png' %}" width="300px" title=""></a>
-        </div>
-      </div>
-
-      {% if user.is_authenticated %}
-<h2>{{ user.email }}</h2>
-      {% else %}  
-
-      {% endif %}
-
-      <div class="col-4" style="margin-left: 5%"">
-        <!-- <nav id="nav-menu-container"> -->
-          <ul class="nav-menu">
-            <li class="menu-active"><a href="/#intro">메인</a></li>
-            <!-- <li><a href="#login">login</a></li> -->
-            <li><a href="/#about">소개</a></li>
-            <li><a href="/#gallery">공연</a></li>
-            <!-- <li><a href="#venue">Venue</a></li> -->
-            <li><a href="/#hotels">포춘티켓</a></li>
-            <!-- <li><a href="#schedule">Schedule</a></li> -->
-            <li><a href="/#supporters">후원</a></li>
-            <!-- <li class="contact"><a href="/#contact">행운확인</a></li> -->
-            <!-- <li class="buy-tickets"><a href="#buy-tickets">Buy Tickets</a></li> -->
-          </ul>
-        <!-- </nav> -->
-      </div>
-
-      <div class="col">
-        <!-- <nav id="nav-menu-container"> -->
-          <ul class="nav-menu">
-            <li class="nav-item dropdown" style="margin-left: 10%">
-              {% if user.is_authenticated %}
-                <img src="{{ user.socialaccount_set.all.0.get_avatar_url }}" class="rounded-circle" width="40px" height="40px" />
-                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{{user.username}} 님이 로그인 중</a>
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#"><p>내정보</p></a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="/#contact"><p>행운확인</p></a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="/accounts/logout"><p>로그아웃</p></a>
-                  </div>
-                {% else %}
-                <li class="contact" style="margin-left: 20%"><a href="{% provider_login_url 'kakao' %}" class="login-btn scrollto">로그인 하러가기</a></li>
-                {% endif %}
-            </li>
-          </ul>
-      </div>
-    </div>
-  </div>
-</header>
-{% endblock header %}
-
-
 {% block content %}
 
 <!--==========================
@@ -82,23 +23,51 @@
     About Section
   ============================-->
   <section id="about" class="wow fadeInUp">
-    <div class="container">
-      <div class="section-header">
-        <h2>포춘티켓이란?</h2>
-        <p>놀라운 가격으로 대한민국 최고의 공연을 빠르게 예매할 수 있는 행운의 티켓입니다.</p>
-      </div>
-
-      <div class="row">
-        <div class="col-lg-4 col-md-6">
-          <div class="speaker">
-            <div class="details">
-              <h3><a href="#">Brenden Legros</a></h3>
-              <p>Quas alias incidunt</p>
+      <div class="container">
+        <div class="section-header">
+          <h2>포춘티켓이란?</h2>
+          <p>놀라운 가격으로 대한민국 최고의 공연을 빠르게 예매할 수 있는 행운의 티켓입니다.</p>
+        </div>
+  
+        <div class="row">
+          <div class="col-lg-4 col-md-6">
+            <div class="speaker">
+              <div class="img-fluid">
+                <img src="{% static 'img/about/broadway.jpg' %}" width="350px" height="280px" alt="Speaker 1">
+                <div class="details">
+                  <h3>Broadway 공연</h3>
+                  <p>Quas alias incidunt</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="speaker">
+              <div class="img-fluid">
+                <img src="{% static 'img/about/Lottery.jpg' %}" width="350px" height="280px" alt="Speaker 1">
+                <div class="details">
+                  <h3>신속한 응모와 추첨</h3>
+                  <p>Quas alias incidunt</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="speaker">
+              <div class="img-fluid">
+                <img src="{% static 'img/about/price.jpg' %}" width="350px" height="280px" alt="Speaker 1">
+                <div class="details">
+                  <h3>착한 가격</h3>
+                  <p>Quas alias incidunt</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+  
       </div>
-    </div>
+  
+    </section>  
 
   </section>
 
@@ -192,7 +161,7 @@
               <i class="fa fa-star"></i>
             </div>
             <div class="stars">
-            <p>2019/08/09</p>
+            <p>2019/08/10</p>
             </div>
           </div>
         </div>
