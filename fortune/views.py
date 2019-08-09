@@ -21,7 +21,8 @@ def enroll(request):
 def sendEmail(request):
 
     msg_plain = render_to_string('email.txt')
-    msg_html = render_to_string('email.html')
+    success_html = render_to_string('email.html')
+    fail_html = render_to_string('failemail.html')
 
     id = request.GET.get('id')
 
@@ -32,8 +33,8 @@ def sendEmail(request):
         '🥠포춘 티켓 응모 결과',
         msg_plain,
         settings.EMAIL_HOST_USER,
-        ['mnjony1014@gmail.com'],
-        html_message=msg_html,
+        ['minjony1014@gmail.com'],
+        html_message=success_html,
         fail_silently=False
     )
 
@@ -42,7 +43,7 @@ def sendEmail(request):
         msg_plain,
         settings.EMAIL_HOST_USER,
         ['jmtkdsh@gmail.com'],
-        html_message=msg_html,
+        html_message=fail_html,
         fail_silently=False
     )
 
