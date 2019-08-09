@@ -8,23 +8,17 @@ from show.models import Show
 # Create your views here.
 
 class MainpageView(TemplateView):
-    show = Show.objects
-    print(show)
-    print("lalala")
     template_name = 'index.html'
 
-
-def lottery(request):
-    return render(request, 'lottery.html')
 
 msg_plain = render_to_string('email.txt')
 msg_html = render_to_string('email.html')
 
-send_mail(
+''' send_mail(
     '🥠포춘 티켓 응모 결과',
     msg_plain,
     settings.EMAIL_HOST_USER,
     ['starpin1014@likelion.org'],
     html_message=msg_html,
     fail_silently=False
-)
+) '''
