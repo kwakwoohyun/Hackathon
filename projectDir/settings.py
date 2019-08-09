@@ -99,6 +99,9 @@ DATABASES = {
         'PASSWORD': '1a2w3e4r!!', # 계정 비밀번호
         'HOST': 'soptserver.cbspdyahhen8.ap-northeast-2.rds.amazonaws.com', # 데이테베이스 주소(IP)
         'PORT': '3306', # 데이터베이스 포트(보통은 3306)
+        'OPTIONS':{
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
+        },
     }
 }
 

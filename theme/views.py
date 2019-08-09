@@ -6,13 +6,9 @@ from django.template.loader import render_to_string
 from show.models import Show
 
 # Create your views here.
-
-class MainpageView(TemplateView):
-    show = Show.objects
-    print(show)
-    print("lalala")
-    template_name = 'index.html'
-
+def MainpageView(request):
+    show = Show.objects.all()
+    return render(request,'index.html',{'show':show})
 
 def lottery(request):
     return render(request, 'lottery.html')
