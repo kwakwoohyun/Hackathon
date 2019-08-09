@@ -5,5 +5,5 @@ from .models import Show
 
 def gallerydetail(request):
     show = Show.objects
-    print(show)
+    
     return render(request, 'gallerydetail.html', {'show':show})
