@@ -149,6 +149,7 @@
           </div>
           <div class="modal-body">
             <form method="POST" action="#">
+              {% csrf_token %}
               <div class="form-group">
                 <input type="text" class="form-control" name="your-name" placeholder="이름">
               </div>
@@ -164,7 +165,7 @@
               </div>
               {% if user.is_authenticated %}
               <div class="text-center">
-                <button type="submit" class="btn"><a href="{% url 'enroll' %}?email={{ user.email }}" target="_blank"
+                <button type="submit" class="btn"></button><a href="{% url 'enroll' %}?email={{ user.email }}" target="_blank"
                     class="link-white" style="color:#ffffff; text-decoration:none;">응모하기</a></button>
               </div>
               {% else %}
