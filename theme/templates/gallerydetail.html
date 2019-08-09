@@ -1,5 +1,6 @@
-  {% extends 'layout.html' %}
-  {% load staticfiles %}
+{% extends 'layout.html' %}
+{% load staticfiles %}
+
   {% block content %}
     <!--==========================
       Gallery Detail Section
@@ -7,6 +8,7 @@
     <section id="venue" class="wow fadeInUp">
       <div class="container">
         <div class="section-header">
+        <br><br>
           <h2>공연 소개</h2>
           <p>{{ show.name }}</p>
         </div>
@@ -179,4 +181,4 @@
       
     </section>
 
-  {% endblock %}
+{% endblock content %}

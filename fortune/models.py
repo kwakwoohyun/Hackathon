@@ -10,6 +10,7 @@ class Fortune(models.Model):
     starttime = models.CharField(max_length=500)
     finishtime = models.CharField(max_length=500)
     number = models.IntegerField()
+    seat = models.CharField(max_length=500)
     calcuatetime = models.CharField(max_length=500)
 
 class User(models.Model):
