@@ -107,62 +107,17 @@
         <p>대한민국 최고의 공연들이 포춘티켓과 함께합니다.</p>
       </div>
     </div>
-
     <div class="owl-carousel gallery-carousel">
+    {% for show in show.all %}
       <div class="speaker">
-        <a href="https://soptserver.s3.ap-northeast-2.amazonaws.com/1565163592482.png" class="venobox" data-gall="gallery-carousel">
-          <img src="https://soptserver.s3.ap-northeast-2.amazonaws.com/1565163592482.png" alt="Speaker 1" class="img-fluid">
+        <a href="{{ show.poster }}" class="venobox" data-gall="gallery-carousel">
+          <img src="{{ show.poster }}" alt="Speaker 1" class="img-fluid">
           <div class="details">
-            <h3><a href="{% url 'gallerydetail' %}">스쿨 오브 락</a></h3>
-            <p>School Of Rock</p>
+            <h3><a href="{% url 'gallerydetail' %}">{{ show.name }}</a></h3>
+            <p>{{show.go}}</p>
           </div>
       </div>
-
-      <div class="speaker">
-        <a href="https://soptserver.s3.ap-northeast-2.amazonaws.com/1565162187079.jpg" class="venobox" data-gall="gallery-carousel">
-          <img src="https://soptserver.s3.ap-northeast-2.amazonaws.com/1565162187079.jpg" alt="Speaker 1" class="img-fluid">
-          <div class="details">
-            <h3><a href="{% url 'gallerydetail' %}">캣츠</a></h3>
-            <p>Cats</p>
-          </div>
-      </div>
-
-      <div class="speaker">
-        <a href="https://soptserver.s3.ap-northeast-2.amazonaws.com/1565162410656.png" class="venobox" data-gall="gallery-carousel">
-          <img src="https://soptserver.s3.ap-northeast-2.amazonaws.com/1565162410656.png" alt="Speaker 1" class="img-fluid">
-          <div class="details">
-            <h3><a href="{% url 'gallerydetail' %}">라이온 킹</a></h3>
-            <p>Lion King</p>
-          </div>
-      </div>
-
-      <div class="speaker">
-        <a href="https://soptserver.s3.ap-northeast-2.amazonaws.com/1565162967203.jpg" class="venobox" data-gall="gallery-carousel">
-          <img src="https://soptserver.s3.ap-northeast-2.amazonaws.com/1565162967203.jpg" alt="Speaker 1" class="img-fluid">
-          <div class="details">
-            <h3><a href="{% url 'gallerydetail' %}">위키드</a></h3>
-            <p>Wicked</p>
-          </div>
-      </div>
-
-      <div class="speaker">
-        <a href="https://soptserver.s3.ap-northeast-2.amazonaws.com/1565163287216.png" class="venobox" data-gall="gallery-carousel">
-          <img src="https://soptserver.s3.ap-northeast-2.amazonaws.com/1565163287216.png" alt="Speaker 1" class="img-fluid">
-          <div class="details">
-            <h3><a href="{% url 'gallerydetail' %}">맘마미아</a></h3>
-            <p>Mammamia!</p>
-          </div>
-      </div>
-
-      <div class="speaker">
-        <a href="https://soptserver.s3.ap-northeast-2.amazonaws.com/1565162677592.png" class="venobox" data-gall="gallery-carousel">
-          <img src="https://soptserver.s3.ap-northeast-2.amazonaws.com/1565162677592.png" alt="Speaker 1" class="img-fluid">
-          <div class="details">
-            <h3><a href="{% url 'gallerydetail' %}">벤허</a></h3>
-            <p>Ben-Her</p>
-          </div>
-      </div>
-
+    {% endfor %}
     </div>
 
   </section>
