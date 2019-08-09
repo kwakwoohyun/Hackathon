@@ -9,7 +9,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
     path('', include('theme.urls')),
-    path('gallerydetail/', show.views.gallerydetail, name='gallerydetail'),
+    path('<int:show_id>/gallerydetail/', show.views.gallerydetail, name='gallerydetail'),
     path('lottery/',  fortune.views.lottery, name='lottery'),
     path('enroll/',  fortune.views.enroll, name='enroll'),
     path('send/',  fortune.views.sendEmail, name='send'),

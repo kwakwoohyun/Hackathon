@@ -3,7 +3,6 @@ from django.db import models
 # Create your models here.
 
 class Fortune(models.Model):
-
     show_id = models.IntegerField()
     date = models.CharField(max_length=500)
     price = models.CharField(max_length=500)
