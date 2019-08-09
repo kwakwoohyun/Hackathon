@@ -46,31 +46,16 @@
     </div>
 
     <script>
-      var flag1 = true;
-      var flag2 = true;
-      var flag3 = true;
 
       $(document).ready(function () {
-        if (flag1) {
           tid1 = setInterval('msg_time1()', 1000);
-        } else {
-          location.href = "{% url 'send' %}?id=1"
-        }
-        if (flag2) {
           tid2 = setInterval('msg_time2()', 1000);
-        } else {
-          location.href = "http://127.0.0.1:8000/send?id=2"
-        }
-        if (flag3) {
           tid3 = setInterval('msg_time3()', 1000);
-        } else {
-          location.href = "http://127.0.0.1:8000/send?id=3"
-
-        }
         });
 
       function msg_time1() {
         var stDate = new Date().getTime();
+        var time = Date.now();
         var value = $('#hide1').val();
         var edDate = new Date(value).getTime(); // 종료날짜
         var RemainDate = edDate - stDate;
@@ -80,6 +65,9 @@
 
         m = hours + ":" + miniutes + ":" + seconds; // 남은 시간 text형태로 변경
 
+        if( Math.floor(time/10000) == Math.floor(edDate/10000)){
+          location.href="http://127.0.0.1:8000/send?id=1";
+        }
         document.all.timer1.innerHTML = m; // div 영역에 보여줌 
 
         if (RemainDate < 0) {
@@ -146,6 +134,8 @@
         }
       }
     </script>
+<h1 id="test1"></h1>
+<h1 id="test2"></h1>
 
     <!-- Modal Order Form -->
     <div id="buy-ticket-modal" class="modal fade">
