@@ -13,6 +13,12 @@
         </div>
       </div>
 
+      {% if user.is_authenticated %}
+<h2>{{ user.email }}</h2>
+      {% else %}  
+
+      {% endif %}
+
       <div class="col-4" style="margin-left: 5%"">
         <!-- <nav id="nav-menu-container"> -->
           <ul class="nav-menu">
@@ -149,7 +155,7 @@
               <i class="fa fa-star"></i>
             </div>
             <div class="stars">
-                <p>24:50:12</p>
+                <p>2019/08/09</p>
                 </div>
           </div>
         </div>
@@ -168,7 +174,7 @@
               <i class="fa fa-star-half-full"></i>
             </div>
             <div class="stars">
-                <p>24:50:12</p>
+                <p>2019/08/09</p>
                 </div>
           </div>
         </div>
@@ -186,7 +192,7 @@
               <i class="fa fa-star"></i>
             </div>
             <div class="stars">
-            <p>24:50:12</p>
+            <p>2019/08/09</p>
             </div>
           </div>
         </div>

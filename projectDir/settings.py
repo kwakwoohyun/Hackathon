@@ -98,10 +98,17 @@ DATABASES = {
         'USER': 'minjony1014', # 데이터베이스 계정
         'PASSWORD': '1a2w3e4r!!', # 계정 비밀번호
         'HOST': 'soptserver.cbspdyahhen8.ap-northeast-2.rds.amazonaws.com', # 데이테베이스 주소(IP)
+<<<<<<< HEAD
         'PORT': '3306', # 데이터베이스 포트(보통은 3306)
         'OPTIONS':{
             'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
         },
+=======
+        'PORT': '3306',
+        'OPTIONS': {
+            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'" 
+        } # 데이터베이스 포트(보통은 3306)
+>>>>>>> 6e49c60dd83a0898ea83013f472a5d010eb9cec4
     }
 }
 
@@ -156,6 +163,7 @@ LOGIN_REDIRECT_URL = "/"
 ACCOUNT_AUTHENTICATED_LOGOUT_REDIRECTS = True
 ACCOUNT_LOGOUT_ON_GET = True
 ACCOUNT_LOGOUT_REDIRECT_URL = "/"
+
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = "smtp.gmail.com"
