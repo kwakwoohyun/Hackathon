@@ -1,5 +1,6 @@
 {% extends 'layout.html' %}
 {% load staticfiles %}
+{% load socialaccount %}
 
 {% block content %}
 <!--==========================
@@ -18,17 +19,18 @@
         
         <div class="row">
         {% for fortune in fortune.all %}
-                <div class="col-lg-4">
+                <div class="col-lg-4" id="text{{ fortune.id }}">
                     <div class="card mb-5 mb-lg-0">
                         <div class="card-body">
                             <h5 class="card-title text-muted text-uppercase text-center">{{ fortune.date }}</h5>
                             <h6 class="card-price text-center">{{ fortune.starttime }} </h6>
+                            <input type="hidden" id="hide{{ fortune.id }}" value="{{ fortune.calcuatetime }} "/>
                             <hr>
                             <ul class="fa-ul">
                                 <li><span class="fa-li"><i class="fa fa-check"></i></span>가격 : {{ fortune.price }} 원</li>
                                 <li><span class="fa-li"><i class="fa fa-check"></i></span>티켓 한도 : {{ fortune.number }} 명</li>
                                 <li><span class="fa-li"><i class="fa fa-check"></i></span>응모 마감 : {{ fortune.finishtime }} </li>
-                                <li><span class="fa-li"><i class="fa fa-check"></i></span>남은시간 : <span style="color: #f82249" id="timer{{ fortune.id }}"></span> </li>
+                                <li><span class="fa-li"><i class="fa fa-check"></i></span>남은시간 : <span style="color: #f82249" id="timer{{ fortune.id }}"></span> </<span>
                             </ul>
                             <hr>
                             <div class="text-center">
@@ -51,7 +53,8 @@
         
         function msg_time1() {
         var stDate = new Date().getTime();
-        var edDate = new Date('2019-08-09 17:02:00').getTime(); // 종료날짜
+        var value = $('#hide1').val();
+        var edDate = new Date(value).getTime(); // 종료날짜
           var RemainDate = edDate - stDate;
           var hours = Math.floor((RemainDate % (1000 * 60 * 60 * 24)) / (1000*60*60));
           var miniutes = Math.floor((RemainDate % (1000 * 60 * 60)) / (1000*60));
@@ -64,6 +67,7 @@
           if (RemainDate < 0) {      
             // 시간이 종료 되었으면..
             clearInterval(tid1); 
+            $("#text1").css("color", "#c0c0c0");
             document.all.timer1.innerHTML = "0:0:0";   // 타이머 해제
           }else{
             RemainDate = RemainDate - 1000; // 남은시간 -1초
@@ -72,7 +76,8 @@
         
         function msg_time2() {
         var stDate = new Date().getTime();
-          var edDate = new Date('2019-08-10 12:00:00').getTime(); // 종료날짜
+        var value = $('#hide2').val();
+          var edDate = new Date(value).getTime(); // 종료날짜
           var RemainDate = edDate - stDate;
           var hours = Math.floor((RemainDate % (1000 * 60 * 60 * 24)) / (1000*60*60));
           var miniutes = Math.floor((RemainDate % (1000 * 60 * 60)) / (1000*60));
@@ -84,6 +89,7 @@
           
           if (RemainDate < 0) {      
             // 시간이 종료 되었으면..
+            $("#text1").css("color", "#c0c0c0");
             clearInterval(tid2); 
             document.all.timer2.innerHTML = "0:0:0";   // 타이머 해제
           }else{
@@ -93,7 +99,8 @@
         
         function msg_time3() {
           var stDate = new Date().getTime();
-          var edDate = new Date('2019-08-10 17:00:00').getTime(); // 종료날짜
+          var value = $('#hide3').val();
+          var edDate = new Date(value).getTime(); // 종료날짜
           var RemainDate = edDate - stDate;
           var hours = Math.floor((RemainDate % (1000 * 60 * 60 * 24)) / (1000*60*60))+24;
           var miniutes = Math.floor((RemainDate % (1000 * 60 * 60)) / (1000*60));
@@ -129,7 +136,7 @@
                             <input type="text" class="form-control" name="your-name" placeholder="이름">
                         </div>
                         <div class="form-group">
-                            <input type="text" class="form-control" name="your-email" placeholder="이메일">
+                            <input type="text" class="form-control" name="your-email" placeholder="연락처">
                         </div>
                         <div class="form-group">
                             <select id="ticket-type" name="ticket-type" class="form-control">
@@ -138,9 +145,15 @@
                                 <option value="standard-access">2</option>
                             </select>
                         </div>
+                        {% if user.is_authenticated %}
                         <div class="text-center">
-                            <button type="submit" class="btn"><a href="{% url 'enroll' %}" target="_blank" class="link-white" style="color:#ffffff; text-decoration:none;">응모하기</a></button>
+                            <button type="submit" class="btn"><a href="{% url 'enroll' %}?email={{ user.email }}" target="_blank" class="link-white" style="color:#ffffff; text-decoration:none;">응모하기</a></button>
                         </div>
+                              {% else %}  
+                              <div class="text-center">
+                                  <button type="submit" class="btn"><a href="{% provider_login_url 'kakao' %}" target="_blank" class="link-white" style="color:#ffffff; text-decoration:none;">응모하기</a></button>
+                              </div>
+                              {% endif %}
                     </form>
                 </div>
             </div><!-- /.modal-content -->

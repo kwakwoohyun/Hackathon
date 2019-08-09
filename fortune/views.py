@@ -6,8 +6,8 @@ def lottery(request):
     return render(request, 'lottery.html',{'fortune': fortune})
 
 def enroll(request):
-    
-    user = User(fortune_id= 1, email = 'starpin1014@likelion.org')
+    email = request.GET.get('email')
+    user = User(fortune_id= 1, email = email)
     user.save()
 
     return redirect('lottery')
