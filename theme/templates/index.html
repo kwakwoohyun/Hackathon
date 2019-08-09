@@ -88,7 +88,7 @@
         <a href="{{ show.poster }}" class="venobox" data-gall="gallery-carousel">
           <img src="{{ show.poster }}" alt="Speaker 1" class="img-fluid">
           <div class="details">
-            <h3><a href="{% url 'gallerydetail' %}">{{ show.name }}</a></h3>
+            <h3><a href="{% url 'gallerydetail' show.id %}">{{ show.name }}</a></h3>
             <p>{{show.go}}</p>
           </div>
       </div>

@@ -14,10 +14,15 @@
         </div>
         <div class="row no-gutters">
           <div class="col-lg-6 venue-map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12664.857319457693!2d127.0139129!3d37.4792683!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x73c1d37009f29b29!2z7JiI7Iig7J2Y7KCE64u5IOyYpO2OmOudvO2VmOyasOyKpA!5e0!3m2!1sko!2skr!4v1565160951962!5m2!1sko!2skr" frameborder="0" style="border:0" allowfullscreen></iframe>
+            <iframe src="{{ show.google_map }}" frameborder="0" style="border:0" allowfullscreen></iframe>
           </div>
           <div class="col-lg-6 venue-info">
             <div class="row justify-content-center">
+<<<<<<< HEAD
+              <div class="col-11 col-lg-8">
+                <h3>{{ show.go }}</h3>
+                <p>Iste nobis eum sapiente sunt enim dolores labore accusantium autem. Cumque beatae ipsam. Est quae sit qui voluptatem corporis velit. Qui maxime accusamus possimus. Consequatur sequi et ea suscipit enim nesciunt quia velit.</p>
+=======
               <div class="col-9 col-lg-9">
                 <h3>포춘티켓 사용방법</h3>
                 <p><img src="{% static 'img/favicon.png' %}" width="30px" height="30px">원하는 가격과 시간을 확인하고 포춘티켓을 응모할 수 있습니다.</p>
@@ -27,6 +32,7 @@
                 <p><img src="{% static 'img/favicon.png' %}" width="30px" height="30px">행운의 당첨자는 QR코드로 좌석을 확인할 수 있습니다.</p>
                 <p><img src="{% static 'img/favicon.png' %}" width="30px" height="30px">다른 사람에게 티켓을 양도할 경우 신분증 또는 학생증이 필요합니다.</p>
                 <p><img src="{% static 'img/favicon.png' %}" width="30px" height="30px">공연 종류는 중복으로 신청이 가능합니다.</p>
+>>>>>>> 1230a10ab1f50034f70a0d86a306252d552edd35
               </div>
             </div>
           </div>
@@ -34,17 +40,13 @@
 
         <div class="row">
           <div class="col-md-6">
-            <img src="https://soptserver.s3.ap-northeast-2.amazonaws.com/1565161094788.gif" style="width:50%" alt="Speaker 1" class="img-fluid">
+            <iframe width="560" height="315" src="{{ show.video }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
           </div>
-
+          
           <div class="col-md-6">
             <div class="details">
-              <h2>Brenden Legros</h2>
-              <p>Voluptatem perferendis sed assumenda voluptatibus. Laudantium molestiae sint. Doloremque odio dolore dolore sit. Quae labore alias ea omnis ex expedita sapiente molestias atque. Optio voluptas et.</p>
- 
-              <p>Aboriosam inventore dolorem inventore nam est esse. Aperiam voluptatem nisi molestias laborum ut. Porro dignissimos eum. Tempore dolores minus unde est voluptatum incidunt ut aperiam.</p> 
-
-              <p>Et dolore blanditiis officiis non quod id possimus. Optio non commodi alias sint culpa sapiente nihil ipsa magnam. Qui eum alias provident omnis incidunt aut. Eius et officia corrupti omnis error vel quia omnis velit. In qui debitis autem aperiam voluptates unde sunt et facilis.</p>
+              <h3>{{ show.name }}</h2>
+              <p>{{ show.info|linebreaks }}</p>
             </div>
           </div>
           
