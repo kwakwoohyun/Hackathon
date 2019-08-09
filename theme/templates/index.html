@@ -13,6 +13,8 @@
         </div>
       </div>
 
+          <a title="{{ provider.name }}" class="socialaccount_provider {{ provider.id }}" href="{% provider_login_url provider.id process='login' %}">{{ provider.name }}</a>
+
       <div class="col-4" style="margin-left: 5%"">
         <!-- <nav id="nav-menu-container"> -->
           <ul class="nav-menu">
