@@ -18,6 +18,7 @@ body {
 a {
   color: #f82249;
   transition: 0.5s;
+  font-weight: 600;
 }
 
 a:hover,
@@ -123,7 +124,7 @@ h6 {
   font-size: 36px;
   text-transform: uppercase;
   text-align: center;
-  font-weight: 700;
+  font-weight: 950;
   margin-bottom: 10px;
 }
 
