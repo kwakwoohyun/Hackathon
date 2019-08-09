@@ -6,16 +6,10 @@ from django.template.loader import render_to_string
 from show.models import Show
 
 # Create your views here.
-<<<<<<< HEAD
+
 def MainpageView(request):
     show = Show.objects.all()
     return render(request,'index.html',{'show':show})
-=======
-
-class MainpageView(TemplateView):
-    template_name = 'index.html'
-
->>>>>>> 6e49c60dd83a0898ea83013f472a5d010eb9cec4
 
 msg_plain = render_to_string('email.txt')
 msg_html = render_to_string('email.html')
