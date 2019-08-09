@@ -1,192 +1,208 @@
 {% extends 'layout.html' %}
 {% load staticfiles %}
 
-  {% block content %}
-    <!--==========================
+{% block content %}
+<script>
+    function change() {
+        document.getElementById("heart").src = "{% static 'img/heart2.png' %}";
+    }
+</script>
+<!--==========================
       Gallery Detail Section
     ============================-->
-    <section id="venue" class="wow fadeInUp">
-      <div class="container">
+<section id="venue" class="wow fadeInUp">
+    <div class="container">
         <div class="section-header">
-        <br><br>
-          <h2>공연 소개</h2>
-          <p>{{ show.name }}</p>
+            <br><br>
+            <h2>공연 소개 </h2>
+            <p style="margin-left:3%">{{ show.name }}<img id="heart" src="{% static 'img/heart1.png' %}" width="30px"
+                    style="float:right"/ onclick="change();" data-toggle="modal" data-target="#buy-ticket-modal"></p>
         </div>
         <div class="row no-gutters">
-          <div class="col-lg-6 venue-map">
-            <iframe src="{{ show.google_map }}" frameborder="0" style="border:0" allowfullscreen></iframe>
-          </div>
-          <div class="col-lg-6 venue-info">
-            <div class="row justify-content-center">
-<<<<<<< HEAD
-              <div class="col-11 col-lg-8">
-                <h3>{{ show.go }}</h3>
-                <p>Iste nobis eum sapiente sunt enim dolores labore accusantium autem. Cumque beatae ipsam. Est quae sit qui voluptatem corporis velit. Qui maxime accusamus possimus. Consequatur sequi et ea suscipit enim nesciunt quia velit.</p>
-=======
-              <div class="col-9 col-lg-9">
-                <h3>포춘티켓 사용방법</h3>
-                <p><img src="{% static 'img/favicon.png' %}" width="30px" height="30px">원하는 가격과 시간을 확인하고 포춘티켓을 응모할 수 있습니다.</p>
-                <p><img src="{% static 'img/favicon.png' %}" width="30px" height="30px">응모하기 버튼을 누르면 이름과 번호를 입력하여 응모할 수 있습니다.</p>
-                <p><img src="{% static 'img/favicon.png' %}" width="30px" height="30px">남은 시간이 종료가 되면 자동으로 메일로 행운의 결과를 확인할 수 있습니다.</p>
-                <p><img src="{% static 'img/favicon.png' %}" width="30px" height="30px">당첨이 되면 환불은 불가능합니다.</p>
-                <p><img src="{% static 'img/favicon.png' %}" width="30px" height="30px">행운의 당첨자는 QR코드로 좌석을 확인할 수 있습니다.</p>
-                <p><img src="{% static 'img/favicon.png' %}" width="30px" height="30px">다른 사람에게 티켓을 양도할 경우 신분증 또는 학생증이 필요합니다.</p>
-                <p><img src="{% static 'img/favicon.png' %}" width="30px" height="30px">공연 종류는 중복으로 신청이 가능합니다.</p>
->>>>>>> 1230a10ab1f50034f70a0d86a306252d552edd35
-              </div>
+            <div class="col-lg-6 venue-map">
+                <iframe src="{{ show.google_map }}" frameborder="0" style="border:0" allowfullscreen></iframe>
             </div>
-          </div>
+            <div class="col-lg-6 venue-info">
+                <div class="row justify-content-center">
+                    <div class="col-9 col-lg-9">
+                        <h3>포춘티켓 사용방법</h3>
+                        <p><img src="{% static 'img/favicon.png' %}" width="30px" height="30px">원하는 가격과 시간을 확인하고 포춘티켓을
+                            응모할 수 있습니다.</p>
+                        <p><img src="{% static 'img/favicon.png' %}" width="30px" height="30px">응모하기 버튼을 누르면 이름과 번호를
+                            입력하여 응모할 수 있습니다.</p>
+                        <p><img src="{% static 'img/favicon.png' %}" width="30px" height="30px">남은 시간이 종료가 되면 자동으로 메일로
+                            행운의 결과를 확인할 수 있습니다.</p>
+                        <p><img src="{% static 'img/favicon.png' %}" width="30px" height="30px">당첨이 되면 환불은 불가능합니다.</p>
+                        <p><img src="{% static 'img/favicon.png' %}" width="30px" height="30px">행운의 당첨자는 QR코드로 좌석을 확인할 수
+                            있습니다.</p>
+                        <p><img src="{% static 'img/favicon.png' %}" width="30px" height="30px">다른 사람에게 티켓을 양도할 경우 신분증
+                            또는 학생증이 필요합니다.</p>
+                        <p><img src="{% static 'img/favicon.png' %}" width="30px" height="30px">공연 종류는 중복으로 신청이 가능합니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="row">
-          <div class="col-md-6">
-            <iframe width="560" height="315" src="{{ show.video }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-          </div>
-          
-          <div class="col-md-6">
-            <div class="details">
-              <h3>{{ show.name }}</h2>
-              <p>{{ show.info|linebreaks }}</p>
+            <div class="col-md-6">
+                <iframe width="560" height="315" src="{{ show.video }}" frameborder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
             </div>
-          </div>
-          
-        </div>
-      </div>
 
-    </section>
+            <div class="col-md-6">
+                <div class="details">
+                    <h3>{{ show.name }}</h2>
+                        <p>{{ show.info|linebreaks }}</p>
+                </div>
+            </div>
 
-    <section id="schedule" class="section-with-bg">
-        <div class="container wow fadeInUp">
-            <div class="section-header">
-                <h2>공연 일정</h2>
-            </div>
-      
-            <ul class="nav nav-tabs" role="tablist">
-                <li class="nav-item">
-                    <a class="nav-link active" href="#day-1" role="tab" data-toggle="tab">Day 1</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#day-2" role="tab" data-toggle="tab">Day 2</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#day-3" role="tab" data-toggle="tab">Day 3</a>
-                </li>
-            </ul>
-      
-            <h3 class="sub-heading">공연은 정각에 시작하며, 1부 2부 나누어저 진행됩니다. 이점 숙지해주시고 예매해주시기 바랍니다.</h3>
-      
-            <div class="tab-content row justify-content-center">
-      
-                <!-- Schdule Day 1 -->
-                <div role="tabpanel" class="col-lg-9 tab-pane fade show active" id="day-1">
-      
-                    <div class="row schedule-item">
-                        <div class="col-md-2"><time>7월</time></div>
-                        
-                        <div class="col-md-10">
-                                <div class="speaker">
-                                
-                                    </div>
-                            <h4>화, 목 5:00 / 금 3:00, 5:00 / 토 3:00, 5:00, 7:00 / 일 2:00 /<br> 월요일 휴무</h4>
-                            <p></p>
-                        </div>
-                    </div>
-      
-                    <div class="row schedule-item">
-                        <div class="col-md-2"><time>8월</time></div>
-                        <div class="col-md-10">
-                            <div class="speaker">
-                                
-                            </div>
-                            <h4>화, 수 오후 3:00 / 목 5:00 / 금 오후 3:00, 5:00 / 토 오후 3:00, 5:00, 7:00 / <br>월요일 휴무</h4>
-                            <p>* 8월 15일 (광복절) 1시 3시 5시</p>
-                        </div>
-                    </div>
-      
-                    <div class="row schedule-item">
-                        <div class="col-md-2"><time>9월</time></div>
-                        <div class="col-md-10">
-                            <div class="speaker">
-                            </div>
-                            <h4>월,수 오전 9:00 / 금 오후 5:00 / 토 오후 2:00, 4:00 / 일 오후 1:00, 6:00 /<br> 화요일 휴무</h4>
-                            <p>추석은 쉽니다.</p>
-                        </div>
-                    </div>
-      
-                </div>
-                <!-- End Schdule Day 1 -->
-      
-                <!-- Schdule Day 2 -->
-                <div role="tabpanel" class="col-lg-9  tab-pane fade" id="day-2">
-      
-                    <div class="row schedule-item">
-                        <div class="col-md-2"><time>10:00 AM</time></div>
-                        <div class="col-md-10">
-                            <div class="speaker">
-                                <img src="{% static 'img/speakers/1.jpg' %}" alt="Brenden Legros">
-                            </div>
-                            <h4>Libero corrupti explicabo itaque. <span>Brenden Legros</span></h4>
-                            <p>Facere provident incidunt quos voluptas.</p>
-                        </div>
-                    </div>
-      
-                    <div class="row schedule-item">
-                        <div class="col-md-2"><time>11:00 AM</time></div>
-                        <div class="col-md-10">
-                            <div class="speaker">
-                                <img src="{% static 'img/speakers/2.jpg' %}" alt="Hubert Hirthe">
-                            </div>
-                            <h4>Et voluptatem iusto dicta nobis. <span>Hubert Hirthe</span></h4>
-                            <p>Maiores dignissimos neque qui cum accusantium ut sit sint inventore.</p>
-                        </div>
-                    </div>
-      
-                </div>
-                <!-- End Schdule Day 2 -->
-      
-                <!-- Schdule Day 3 -->
-                <div role="tabpanel" class="col-lg-9  tab-pane fade" id="day-3">
-      
-                    <div class="row schedule-item">
-                        <div class="col-md-2"><time>10:00 AM</time></div>
-                        <div class="col-md-10">
-                            <div class="speaker">
-                                <img src="{% static 'img/speakers/2.jpg' %}" alt="Hubert Hirthe">
-                            </div>
-                            <h4>Et voluptatem iusto dicta nobis. <span>Hubert Hirthe</span></h4>
-                            <p>Maiores dignissimos neque qui cum accusantium ut sit sint inventore.</p>
-                        </div>
-                  </div>
-      
-                    <div class="row schedule-item">
-                        <div class="col-md-2"><time>11:00 AM</time></div>
-                        <div class="col-md-10">
-                            <div class="speaker">
-                                <img src="{% static 'img/speakers/3.jpg' %}" alt="Cole Emmerich">
-                            </div>
-                            <h4>Explicabo et rerum quis et ut ea. <span>Cole Emmerich</span></h4>
-                            <p>Veniam accusantium laborum nihil eos eaque accusantium aspernatur.</p>
-                        </div>
-                    </div>
-      
-                    <div class="row schedule-item">
-                        <div class="col-md-2"><time>12:00 AM</time></div>
-                        <div class="col-md-10">
-                            <div class="speaker">
-                                <img src="{% static 'img/speakers/1.jpg' %}" alt="Brenden Legros">
-                            </div>
-                            <h4>Libero corrupti explicabo itaque. <span>Brenden Legros</span></h4>
-                            <p>Facere provident incidunt quos voluptas.</p>
-                        </div>
-                    </div>
-      
-                </div>
-                <!-- End Schdule Day 3 -->
-      
-            </div>
-      
         </div>
-      
-    </section>
+    </div>
+
+</section>
+
+<section id="schedule" class="section-with-bg">
+    <div class="container wow fadeInUp">
+        <div class="section-header">
+            <h2>공연 일정</h2>
+        </div>
+
+        <h3 class="sub-heading">공연은 정각에 시작하며, 1부 2부 나누어저 진행됩니다. 이점 숙지해주시고 예매해주시기 바랍니다.</h3>
+
+        <div class="tab-content row justify-content-center">
+
+            <!-- Schdule Day 1 -->
+            <div role="tabpanel" class="col-lg-9 tab-pane fade show active" id="day-1">
+
+                <div class="row schedule-item">
+                    <div class="col-md-2"><time>7월</time></div>
+
+                    <div class="col-md-10">
+                        <div class="speaker">
+
+                        </div>
+                        <h4>화, 목 5:00 / 금 3:00, 5:00 / 토 3:00, 5:00, 7:00 / 일 2:00 /<br> 월요일 휴무</h4>
+                        <p></p>
+                    </div>
+                </div>
+
+                <div class="row schedule-item">
+                    <div class="col-md-2"><time>8월</time></div>
+                    <div class="col-md-10">
+                        <div class="speaker">
+
+                        </div>
+                        <h4>화, 수 오후 3:00 / 목 5:00 / 금 오후 3:00, 5:00 / 토 오후 3:00, 5:00, 7:00 / <br>월요일 휴무</h4>
+                        <p>* 8월 15일 (광복절) 1시 3시 5시</p>
+                    </div>
+                </div>
+
+                <div class="row schedule-item">
+                    <div class="col-md-2"><time>9월</time></div>
+                    <div class="col-md-10">
+                        <div class="speaker">
+                        </div>
+                        <h4>월,수 오전 9:00 / 금 오후 5:00 / 토 오후 2:00, 4:00 / 일 오후 1:00, 6:00 /<br> 화요일 휴무</h4>
+                        <p>추석은 쉽니다.</p>
+                    </div>
+                </div>
+
+            </div>
+            <!-- End Schdule Day 1 -->
+
+            <!-- Schdule Day 2 -->
+            <div role="tabpanel" class="col-lg-9  tab-pane fade" id="day-2">
+
+                <div class="row schedule-item">
+                    <div class="col-md-2"><time>10:00 AM</time></div>
+                    <div class="col-md-10">
+                        <div class="speaker">
+                            <img src="{% static 'img/speakers/1.jpg' %}" alt="Brenden Legros">
+                        </div>
+                        <h4>Libero corrupti explicabo itaque. <span>Brenden Legros</span></h4>
+                        <p>Facere provident incidunt quos voluptas.</p>
+                    </div>
+                </div>
+
+                <div class="row schedule-item">
+                    <div class="col-md-2"><time>11:00 AM</time></div>
+                    <div class="col-md-10">
+                        <div class="speaker">
+                            <img src="{% static 'img/speakers/2.jpg' %}" alt="Hubert Hirthe">
+                        </div>
+                        <h4>Et voluptatem iusto dicta nobis. <span>Hubert Hirthe</span></h4>
+                        <p>Maiores dignissimos neque qui cum accusantium ut sit sint inventore.</p>
+                    </div>
+                </div>
+
+            </div>
+            <!-- End Schdule Day 2 -->
+
+            <!-- Schdule Day 3 -->
+            <div role="tabpanel" class="col-lg-9  tab-pane fade" id="day-3">
+
+                <div class="row schedule-item">
+                    <div class="col-md-2"><time>10:00 AM</time></div>
+                    <div class="col-md-10">
+                        <div class="speaker">
+                            <img src="{% static 'img/speakers/2.jpg' %}" alt="Hubert Hirthe">
+                        </div>
+                        <h4>Et voluptatem iusto dicta nobis. <span>Hubert Hirthe</span></h4>
+                        <p>Maiores dignissimos neque qui cum accusantium ut sit sint inventore.</p>
+                    </div>
+                </div>
+
+                <div class="row schedule-item">
+                    <div class="col-md-2"><time>11:00 AM</time></div>
+                    <div class="col-md-10">
+                        <div class="speaker">
+                            <img src="{% static 'img/speakers/3.jpg' %}" alt="Cole Emmerich">
+                        </div>
+                        <h4>Explicabo et rerum quis et ut ea. <span>Cole Emmerich</span></h4>
+                        <p>Veniam accusantium laborum nihil eos eaque accusantium aspernatur.</p>
+                    </div>
+                </div>
+
+                <div class="row schedule-item">
+                    <div class="col-md-2"><time>12:00 AM</time></div>
+                    <div class="col-md-10">
+                        <div class="speaker">
+                            <img src="{% static 'img/speakers/1.jpg' %}" alt="Brenden Legros">
+                        </div>
+                        <h4>Libero corrupti explicabo itaque. <span>Brenden Legros</span></h4>
+                        <p>Facere provident incidunt quos voluptas.</p>
+                    </div>
+                </div>
+
+            </div>
+            <!-- End Schdule Day 3 -->
+
+        </div>
+
+    </div>
+
+    <!-- Modal Order Form -->
+    <div id="buy-ticket-modal" class="modal fade">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">즐겨 찾기 추가</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>포춘 티켓 진행시 가장 먼저 알람을 받을 수 있습니다. </p>
+                    <div class="text-center">
+                    <button type="submit" class="btn" data-dismiss="modal" style="background-color: #f82249; color:#ffffff">확인했어요</button>
+                </div>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+</section>
 
 {% endblock content %}
